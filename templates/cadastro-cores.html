@@ -40,7 +40,7 @@
             align-items: center;
             justify-content: center;
             background-color: #3ce74b;
-            width: 100%;
+            width: 50%;
             height: 80px;
             font-size: large;
             font-weight: 1000;
@@ -61,17 +61,26 @@
             margin-left: 40px;
         }
 
+        .cards-pai{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         
+        .btn-excluir{
+
+        }
        
     </style>
     <!-- Caixa de texto para o cadastro das frases -->
     <div class="row">
-        <form class="col s12" action="/post/cadastrarfrase" method="POST">
+        <form class="col s12" action="/post/cadastrarCores" method="POST">
           <div class="row">
             <div class="input-field-col-s6">
               <i class="material-icons prefix"></i>
-              <textarea name="frase" id="icon_prefix2" class="materialize-textarea"></textarea>
-              <label for="icon_prefix2">Frases</label>
+              <textarea name="cores" id="icon_prefix2" class="materialize-textarea"></textarea>
+              
             </div>
           </div>
           <!-- Botão para o cadastro das frases -->
@@ -83,17 +92,24 @@
 
     <!-- CARTÃO MODELO ONDE SERÁ EXIBIDO AS FRASES -->
    
-    {% for frase in frases %}
-    <div class="card">
-        <div class="col-s12-m5">
-          
-            <span class="white-text">
-                {{frase}}
-            </span>
-          
+    <section class="cards-pai">
+        
+        {% for cores in cores %}
+        <div class="card" style="background-color: {{cores}};">
+            <div class="col-s12-m5">
+                <div class="card-painel">      
+                    <span class="white-text" >
+                        {{cores}}
+                    </span>                   
+                </div>               
+            </div>
+            
         </div>
-    </div>
-    {% endfor %}
+        <button class="btn-excluir">Excluir</button>
+        {% endfor %}
+    </section>
+
+    
 
 
    

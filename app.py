@@ -64,8 +64,28 @@ def post_cadastrarfrase():
     redirect("/cadastro")
     return "Frase cadastrada"
 
-@app.route("")
 
+
+
+
+
+
+
+
+
+
+@app.route("/cadastroCores")
+
+def paginaCores():
+    return render_template("cadastro-cores.html", cores = lista_cores)
+
+
+@app.route("/post/cadastrarCores", methods = ["POST"])
+def post_cadastrarcores():
+    cor_vinda_do_html = request.form.get("cores")
+    lista_cores.append(cor_vinda_do_html)
+    return redirect("/cadastroCores")
+    
 
 
 
