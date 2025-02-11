@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando o FRAMEWORK MATERIALIZE -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Link para Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Cadastro de Frases</title>
+</head>
+<body>
+    <style>
+        .input-field-col-s6 {
+            width: 600px;
+        }
+        body{
+            background-color: #7e71f3;
+        }
+
+        textarea{
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card{
+            display: flex;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            background-color: #3ce74b;
+            width: 100%;
+            height: 80px;
+            font-size: large;
+            font-weight: 1000;
+            
+        }
+
+        .button{
+            display: flex;
+            margin-left: auto;
+            
+        }
+
+        .btn-waves-effect{
+            background-color: #3ce74b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40px;
+        }
+
+        
+       
+    </style>
+    <!-- Caixa de texto para o cadastro das frases -->
+    <div class="row">
+        <form class="col s12" action="/post/cadastrarfrase" method="POST">
+          <div class="row">
+            <div class="input-field-col-s6">
+              <i class="material-icons prefix"></i>
+              <textarea name="frase" id="icon_prefix2" class="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Frases</label>
+            </div>
+          </div>
+          <!-- Botão para o cadastro das frases -->
+          <button class="btn-waves-effect" type="submit" name="action">Salvar
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+    </div>
+
+    <!-- CARTÃO MODELO ONDE SERÁ EXIBIDO AS FRASES -->
+   
+    {% for frase in frases %}
+    <div class="card">
+        <div class="col-s12-m5">
+          
+            <span class="white-text">
+                {{frase}}
+            </span>
+          
+        </div>
+    </div>
+    {% endfor %}
+
+
+   
+</body>
+</html>

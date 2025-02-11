@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+
+    <style>
+        
+        header{
+            display: flex;
+            background-color: #191970;
+            color: #DAA520;
+            height: 80px;
+        }
+        
+        h1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .curiosidade{
+            width: 700px;
+            height: 10  0px;
+            background-color: black;
+            color: white;
+            
+            
+        }
+
+        body{
+            background-color: {{cor_de_fundo_html}};
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <h1>
+            Neymar da Silva Santos Jr
+        </h1>
+
+    </header>
+
+    <main>
+
+        <div class="curiosidade">
+
+            <h2>
+                Curiosidades
+            </h2>
+            <p>
+                {{curiosidade_html}};
+            </p>
+
+        </div>
+
+        <figure>
+            <img src="/static/img/{{foto_html}}" alt="">
+        </figure>
+    </main>
+</body>
+</html>
