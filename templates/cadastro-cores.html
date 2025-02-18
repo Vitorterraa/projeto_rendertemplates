@@ -100,12 +100,17 @@
                 <div class="card-painel">      
                     <span class="white-text" >
                         {{cores}}
-                    </span>                   
+                    </span>     
+                    <a href="cores/delete/{{loop.index0}}">
+                        <button class="btn-excluir">Excluir</button>
+                    </a>
+                    
+                    
                 </div>               
             </div>
             
         </div>
-        <button class="btn-excluir">Excluir</button>
+        
         {% endfor %}
     </section>
 
